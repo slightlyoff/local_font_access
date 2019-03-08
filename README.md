@@ -190,11 +190,9 @@ Several aspects of this design need validation:
 
 ### Privacy and Security Considerations
 
-On the surface, the `local-fonts` permission appears to provide a highly fingerprintable surface. UAs are free to break this contract and return only those fonts which they wish to.
+The `local-fonts` permission appears to provide a highly fingerprintable surface. However, UAs are free to return anything they like.
 
-For example, the Tor Browser (or Brave) may choose to only ever provide a globally harmonized set of default fonts built into the browser rather than reflect any expanded knowledge about the local device to web content.
-
-Similarly, UAs are not required to provide table data exactly as it appears on disk. Chrome, e.g., will only provide access to table data after sanitization via OTS and will fail to reflect certain tables entirely to mitigate attacks against content and the browser.
+For example, the Tor Browser or Brave may choose to only provide a set of default fonts built into the browser. Similarly, UAs are not required to provide table data exactly as it appears on disk. Chrome, e.g., will only provide access to table data after sanitization via [OTS](https://github.com/khaledhosny/ots) and will fail to reflect certain tables entirely.
 
 ## Considered alternatives
 
